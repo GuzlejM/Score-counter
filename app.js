@@ -1,21 +1,51 @@
-var p1Btn = document.querySelector("#P1btn")
-var p2Btn = document.querySelector("#P2btn")
-var p1Display = document.querySelector("#p1Display")
-var p2Display = document.querySelector("#p2Display")
-var reset = document.querySelector("#reset")
+var p1Btn = document.querySelector("#P1btn");
+var p2Btn = document.querySelector("#P2btn");
+var p1Display = document.querySelector("#p1Display");
+var p2Display = document.querySelector("#p2Display");
+var reset = document.querySelector("#reset");
+var gameOver = document.querySelector("#maxScore");
+var input = document.querySelector("input");
+var inputValue = document.querySelector("input").value;
+var maxScore = gameOver.textContent;
+var inputAttribute = input.getAttribute("value")
+
+//************ TEST TEST TEST *************/
+console.log(input + '" is input element"');
+console.log(inputValue +" is inputValue");
+console.log(gameOver.textContent + " is gameOver");
+console.log(maxScore + " is maxScore");
+console.log(input.getAttribute.value);
+console.log(input.getAttribute.value);
+console.log(inputAttribute);
+
+//*****************************************/
+
 
 p1Btn.addEventListener("click", function() {
     p1Display.textContent++;
+    if(p1Display.textContent >= gameOver.textContent) {
+        p1Display.textContent = 0;
+        p2Display.textContent = 0;
+    }
 });
 
 p2Btn.addEventListener("click", function() {
     p2Display.textContent++;
+    if(p2Display.textContent >= gameOver.textContent) {
+        p1Display.textContent = 0;
+        p2Display.textContent = 0;
+    }
 });
 
 reset.addEventListener("click", function() {
     p1Display.textContent = 0;
     p2Display.textContent = 0;
 });
+
+input.addEventListener("click", function() {
+});
+
+
 
 
 
