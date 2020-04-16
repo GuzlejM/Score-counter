@@ -8,6 +8,9 @@ var p2Score = 0;
 var gameOver = false;
 var winningScore = 5;
 var numInput = document.querySelector("input");
+var number = document.querySelector("#number")
+number.textContent = numInput.value;
+console.log(Number(number.text), numInput);
 
 p1Button.addEventListener("click", function(){
     if(!gameOver){
@@ -40,6 +43,8 @@ reset.addEventListener("click", function() {
 });
 
 numInput.addEventListener("change", function(){ 
-console.log("changed input")
+    number.textContent = numInput.value;
+    winningScore = Number(numInput.value);
+
 });
 
